@@ -11,6 +11,7 @@
 
     <title>Admin-Boots Arwork</title>
     <link href="<?= base_url() ?>css/sb-admin-2.min.css" rel="stylesheet">
+    
     <!-- Custom fonts for this template-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
@@ -23,8 +24,8 @@
 
 
     <!-- Custom styles for this template-->
-
-     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
 
 
 </head>
@@ -154,9 +155,8 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
-    </script>
+    
+    <script src="<?= base_url() ?>js/animation.js"></script>
     <script src="<?= base_url() ?>vendor/jquery/jquery.min.js"></script>
     <script src="<?= base_url() ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
@@ -167,11 +167,9 @@
     <script src="<?= base_url() ?>js/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
-    <script src="<?= base_url() ?>vendor/chart.js/Chart.min.js"></script>
-
+    
+    
     <!-- Page level custom scripts -->
-    <script src="<?= base_url() ?>js/demo/chart-area-demo.js"></script>
-    <script src="<?= base_url() ?>js/demo/chart-pie-demo.js"></script>
 
 </body>
 
