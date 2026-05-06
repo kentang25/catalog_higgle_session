@@ -74,6 +74,7 @@
 
                 <thead class="bg-blue-600 text-white">
                     <tr>
+                        <th class="px-4 py-3 text-left">No.</th>
                         <th class="px-4 py-3 text-left">Nama Band</th>
                         <th class="px-4 py-3 text-left">Gambar</th>
                         <th class="px-4 py-3 text-left">Kategori</th>
@@ -82,8 +83,9 @@
                 </thead>
 
                 <tbody class="bg-white text-gray-700">
+                    <?php foreach($higgle_session as $higgle) : ?>
                     <tr class="border-t hover:bg-gray-50">
-                        <?php foreach($higgle_session as $higgle) : ?>
+                            <td class="px-4 py-3"><?= $higgle['id_collection'] ?></td>
                             <td class="px-4 py-3"><?= $higgle['nama_band'] ?></td>
                             <td class="px-4 py-3"><img src="/img_upload/<?= $higgle['gambar'] ?>" alt="<?= $higgle['nama_band'] ?>" class="w-16 h-16 object-cover"></td>
                             <td class="px-4 py-3"><?= $higgle['kategori'] ?></td>
@@ -92,8 +94,8 @@
                                 <a href="/admin/delete/<?= $higgle['id_collection'] ?>" class="!bg-red-500 py-2 px-2 rounded-lg shadow-md !no-underline text-white ml-4">Delete</a>
                             </td>
 
+                        </tr>
                         <?php endforeach; ?>
-                    </tr>
                 </tbody>
 
             </table>
