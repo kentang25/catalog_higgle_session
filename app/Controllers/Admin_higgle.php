@@ -2,14 +2,17 @@
 
     namespace App\Controllers;
     use App\Models\M_higgle_session;
+    use App\Models\M_product_gallery;
     use App\Controllers\BaseController;
 
     Class Admin_higgle extends BaseController{
 
         protected $higgleModel;
+        protected $galleryModel;
 
         public function __construct()
         {
+            $this->galleryModel = new M_product_gallery();
             $this->higgleModel = new M_higgle_session();
         }
 
@@ -36,16 +39,33 @@
             if($this->validate($rules) == false){
                 return redirect()->to('/admin')->withInput();
             }else{
-                $fileGambar = $this->request->getFile('gambar');
+                $fileGambar = $this->request->getFile('thumbnail');
                 // dd($fileGambar);
                 $namaGambar = $fileGambar->getRandomName();
                 $fileGambar->move('img_upload', $namaGambar);
 
-                $this->higgleModel->save([
+                $id_collection  = $this->higgleModel->insert([
                     'nama_band' => $this->request->getPost('nama_band'),
-                    'gambar'    => $namaGambar,
+                    'thumbnail' => $namaGambar,
+                    'tag'       => $this->request->getPost('tag'),
+                    'size'      => $this->request->getPost('size'),
                     'kategori'  => $this->request->getPost('kategori')
                 ]);
+
+                $product_gambar = $this->request->getFiles()['gambar'];
+
+                foreach($product_gambar as $gambar){
+                    if($gambar->isValid() && !$gambar->hasMoved()){
+                        $namaGambar = $gambar->getRandomName();
+                        $gambar->move('img_upload/gallery', $namaGambar);
+
+                        $this->galleryModel->save([
+                            'id_gambar'     => $id_collection,
+                            'gambar'        => $namaGambar
+                        ]);
+                        
+                    }
+                }
 
                 return redirect()->to('/admin');
             }

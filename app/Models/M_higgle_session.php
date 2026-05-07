@@ -8,7 +8,7 @@
 
         protected $table            = 'tb_collections';
         protected $primaryKey       = 'id_collection';
-        protected $allowedFields    = ['nama_band', 'kategori', 'gambar'];
+        protected $allowedFields    = ['nama_band', 'kategori', 'thumbnail','size','tag'];
 
 
         public function getHiggle($id = false)

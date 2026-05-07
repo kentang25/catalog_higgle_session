@@ -11,14 +11,10 @@
 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4">
     <?php foreach($higgle_collection as $collection) : ?>
 
-    <?php if($collection['gambar'] === null) : ?>
-    <div class="bg-gray-900 p-4 rounded-2xl">
-        <img src="assets/img/Website/IMG_20250828_131300.jpg" class="rounded-xl mb-4" />
-        <h4 class="font-semibold">Gulch</h4>
-        <p class="text-gray-400 text-sm">Band Merch</p>
-    </div>
+    <?php if($collection === null) : ?>
+        <p class="text-center text-extrabold text-4xl">No collections available.</p>
     <?php else : ?>
-    <div class="bg-gray-900 p-4 rounded-2xl">
+    <div class="bg-gray-900 p-20 rounded-2xl">
         <img src="img_upload/<?= $collection['gambar']; ?>" class="rounded-xl mb-4" alt="<?= $collection['nama_band'] ?>" />
         <h4 class="font-semibold"><?= $collection['nama_band'] ?></h4>
         <p class="text-gray-400 text-sm">Band Merch</p>
