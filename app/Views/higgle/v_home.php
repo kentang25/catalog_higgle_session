@@ -16,7 +16,7 @@
         <?php foreach($higgle_session as $higgle) : ?>
         <!-- Card -->
         <div class="bg-gray-900 p-4 rounded-2xl">
-            <img src="img_upload/<?= $higgle['gambar']; ?>" class="rounded-xl mb-4" alt="<?= $higgle['nama_band'] ?>" />
+            <img src="img_upload/<?= $higgle['thumbnail']; ?>" class="rounded-xl mb-4" alt="<?= $higgle['nama_band'] ?>" />
             <h4 class="font-semibold"><?= $higgle['nama_band'] ?></h4>
             <p class="text-gray-400 text-sm">Band Merch</p>
         </div>

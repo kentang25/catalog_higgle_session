@@ -52,6 +52,7 @@
                     'kategori'  => $this->request->getPost('kategori')
                 ]);
 
+                // dd($id_collection);
                 $product_gambar = $this->request->getFiles()['gambar'];
 
                 foreach($product_gambar as $gambar){
@@ -60,7 +61,7 @@
                         $gambar->move('img_upload/gallery', $namaGambar);
 
                         $this->galleryModel->save([
-                            'id_gambar'     => $id_collection,
+                            'id_collection'     => $id_collection,
                             'gambar'        => $namaGambar
                         ]);
                         

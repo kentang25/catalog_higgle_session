@@ -19,6 +19,13 @@
                 return $this->where(['id_collection' => $id])->first();
             }
         }
+
+        // public function getAllimage()
+        // {
+        //     return $this->db->table(('tb_gambar'))
+        //     ->join('tb_collections', 'tb_collections.id_collection = tb_gambar.id_collection')
+        //     ->get()->getResultArray();
+        // }
     }
 
 ?>

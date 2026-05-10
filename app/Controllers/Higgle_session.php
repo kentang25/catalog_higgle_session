@@ -2,14 +2,17 @@
 
     namespace App\Controllers;
     use App\Models\M_higgle_session;
+    use App\Models\M_product_gallery;
     use App\Controllers\BaseController;
 
     Class Higgle_session extends BaseController
     {
         protected $higgleModel;
+        protected $gambarModel;
 
         public function __construct()
         {
+            $this->gambarModel = new M_product_gallery();
             $this->higgleModel = new M_higgle_session();
         }
 
@@ -27,7 +30,8 @@
         {
             $data = [
                 'title' => 'Collection',
-                'higgle_collection' => $this->higgleModel->getHiggle()
+                'higgle_collection' => $this->higgleModel->getHiggle(),
+                'higgle_all_gambar' => $this->gambarModel->getGambar()
             ];
 
             return view('higgle/v_collection', $data);
