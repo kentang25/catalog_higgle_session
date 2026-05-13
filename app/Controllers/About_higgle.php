@@ -27,11 +27,11 @@
             $rules = [
                 'judul' => 'required',
                 'about' => 'required',
-                'gambar' => 'required'
+                // 'gambar' => ''
             ];
 
             if($this->validate($rules) == false){
-                return redirect()->to('/about')->withInput();
+                return redirect()->to('/admin/about')->withInput();
             }else{
                 $fileGambar = $this->request->getFile('gambar');
                 $namaGambar = $fileGambar->getRandomName();
@@ -44,7 +44,46 @@
                         'gambar'    => $namaGambar
                     ]);
 
-                return redirect()->to('/about');
+                return redirect()->to('/admin/about');
+            }
+        }
+
+        public function edit($id)
+        {
+            $data = [
+                'title' => 'Edit About Higgle',
+                'edit_about' => $this->aboutModel->getAbout($id)
+            ];
+
+            return view('admin/v_edit_about', $data);
+        }
+
+        public function update($id)
+        {
+            $rules = [
+                'judul' => 'required',
+                'about' => 'required'
+            ];
+
+            if($this->validate($rules) == false){
+                return redirect()->to('/admin/about/edit/' . $id)->withInput();
+            }else{
+                $fileGambar = $this->request->getFile('gambar');
+
+                if($fileGambar->isValid() && !$fileGambar->hasMoved()){
+                    $namaGambar = $fileGambar->getRandomName();
+                    $fileGambar->move('about/img_upload', $namaGambar);
+
+                    $this->aboutModel->save([
+                        'id_about'  => $id,
+                        'judul'     => $this->request->getPost('judul'),
+                        'about'     => $this->request->getPost('about'),
+                        'gambar'    => $namaGambar
+                    ]);
+
+                }
+
+                return redirect()->to('/admin/about');
             }
         }
     }

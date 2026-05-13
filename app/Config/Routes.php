@@ -17,6 +17,8 @@ $routes->get('/admin/delete/(:num)', 'Admin_higgle::delete/$1');
 
 $routes->get('/admin/about', 'About_higgle::index');
 $routes->post('/admin/about/save', 'About_higgle::save');
+$routes->get('/admin/about/edit/(:num)', 'About_higgle::edit/$1');
+$routes->post('/admin/about/update/(:num)', 'About_higgle::update/$1');
 
 
 // Higgle Session
