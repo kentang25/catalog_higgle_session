@@ -73,19 +73,27 @@
                 if($fileGambar->isValid() && !$fileGambar->hasMoved()){
                     $namaGambar = $fileGambar->getRandomName();
                     $fileGambar->move('about/img_upload', $namaGambar);
+                }else{
+                    $namaGambar = $this->request->getPost('gambarLama');
+                }
 
-                    $this->aboutModel->save([
+                $this->aboutModel->save([
                         'id_about'  => $id,
                         'judul'     => $this->request->getPost('judul'),
                         'about'     => $this->request->getPost('about'),
                         'gambar'    => $namaGambar
                     ]);
 
-                }
-
                 return redirect()->to('/admin/about');
             }
         }
+
+        public function delete($id)
+        {
+            $this->aboutModel->delete($id);
+            return redirect()->to('/admin/about');
+        }
+
     }
 
 ?>

@@ -3,173 +3,362 @@
 
 <head>
 
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Admin-Boots Arwork</title>
-    <link href="<?= base_url() ?>css/sb-admin-2.min.css" rel="stylesheet">
-    
-    <!-- Custom fonts for this template-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Higgle Session Admin</title>
 
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
 
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
 
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
 
-    <!-- Custom styles for this template-->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    
-
+        ::-webkit-scrollbar-thumb {
+            background: #3f3f46;
+            border-radius: 999px;
+        }
+    </style>
 
 </head>
 
-<body id="page-top">
+<body class="bg-[#0a0a0a] text-white overflow-x-hidden">
 
-    <!-- Page Wrapper -->
-    <div id="wrapper">
+    <!-- Wrapper -->
+    <div class="flex min-h-screen">
 
-        <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <!-- SIDEBAR -->
+        <aside
+            class="hidden lg:flex lg:flex-col w-72 bg-[#111111] border-r border-gray-800 shadow-2xl">
 
-            <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+            <!-- Logo -->
+            <div class="px-8 py-8 border-b border-gray-800">
+
+                <div class="flex items-center gap-4">
+
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-white text-black flex items-center justify-center text-2xl shadow-lg">
+
+                        <i class="fa-solid fa-skull-crossbones"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h1 class="text-xl font-black tracking-[4px] text-white">
+                            HIGGLE
+                        </h1>
+
+                        <p class="text-xs uppercase tracking-[3px] text-gray-500">
+                            Session Admin
+                        </p>
+
+                    </div>
+
                 </div>
-                <div class="sidebar-brand-text mx-3 mt-2">Admin Portofolio</div>
-            </a>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0">
-
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" href="index.html">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Interface
             </div>
 
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link " href="/admin/header" aria-expanded="true">
-                    <i class="fa-solid fa-book"></i>
-                    <span>Data Header</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link " href="/admin/project" aria-expanded="true">
-                    <i class="fa-solid fa-book"></i>
-                    <span>Data Project</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link " href="/admin/about" aria-expanded="true">
-                    <i class="fa-solid fa-book"></i>
-                    <span>Data About</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link " href="/admin/contact" aria-expanded="true">
-                    <i class="fa-solid fa-book"></i>
-                    <span>Data Contact</span>
-                </a>
-            </li>
+            <!-- Navigation -->
+            <div class="flex-1 overflow-y-auto px-5 py-6">
 
-            <!-- Nav Item - Utilities Collapse Menu -->
+                <!-- Main -->
+                <div class="mb-10">
 
+                    <p class="text-xs uppercase tracking-[3px] text-gray-500 mb-4 px-3">
+                        Main Menu
+                    </p>
 
-        </ul>
-        <!-- End of Sidebar -->
+                    <ul class="space-y-2">
 
-        <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
+                        <li>
+                            <a href="/admin"
+                                class="flex items-center gap-4 bg-white text-black px-4 py-3 rounded-2xl font-semibold shadow-lg transition duration-300 no-underline">
 
-            <!-- Main Content -->
-            <div id="content">
+                                <i class="fa-solid fa-chart-line text-lg"></i>
 
-                <!-- Topbar -->
+                                Dashboard
 
-                <!-- End of Topbar -->
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/admin/collection"
+                                class="flex items-center gap-4 text-gray-400 hover:bg-gray-900 hover:text-white px-4 py-3 rounded-2xl transition duration-300 no-underline">
+
+                                <i class="fa-solid fa-shirt text-lg"></i>
+
+                                Collections
+
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/admin/about"
+                                class="flex items-center gap-4 text-gray-400 hover:bg-gray-900 hover:text-white px-4 py-3 rounded-2xl transition duration-300 no-underline">
+
+                                <i class="fa-solid fa-circle-info text-lg"></i>
+
+                                About Higgle
+
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <!-- Management -->
+                <div class="mb-10">
+
+                    <p class="text-xs uppercase tracking-[3px] text-gray-500 mb-4 px-3">
+                        Management
+                    </p>
+
+                    <ul class="space-y-2">
+
+                        <li>
+                            <a href="#"
+                                class="flex items-center gap-4 text-gray-400 hover:bg-gray-900 hover:text-white px-4 py-3 rounded-2xl transition duration-300 no-underline">
+
+                                <i class="fa-solid fa-image"></i>
+
+                                Gallery
+
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#"
+                                class="flex items-center gap-4 text-gray-400 hover:bg-gray-900 hover:text-white px-4 py-3 rounded-2xl transition duration-300 no-underline">
+
+                                <i class="fa-solid fa-tags"></i>
+
+                                Categories
+
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#"
+                                class="flex items-center gap-4 text-gray-400 hover:bg-gray-900 hover:text-white px-4 py-3 rounded-2xl transition duration-300 no-underline">
+
+                                <i class="fa-solid fa-users"></i>
+
+                                Customers
+
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <!-- System -->
+                <div>
+
+                    <p class="text-xs uppercase tracking-[3px] text-gray-500 mb-4 px-3">
+                        System
+                    </p>
+
+                    <ul class="space-y-2">
+
+                        <li>
+                            <a href="#"
+                                class="flex items-center gap-4 text-gray-400 hover:bg-gray-900 hover:text-white px-4 py-3 rounded-2xl transition duration-300 no-underline">
+
+                                <i class="fa-solid fa-gear"></i>
+
+                                Settings
+
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/logout"
+                                class="flex items-center gap-4 text-red-400 hover:bg-red-500 hover:text-white px-4 py-3 rounded-2xl transition duration-300 no-underline">
+
+                                <i class="fa-solid fa-right-from-bracket"></i>
+
+                                Logout
+
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <!-- Footer -->
+            <div class="border-t border-gray-800 p-5">
+
+                <div
+                    class="bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-3xl p-5">
+
+                    <div class="flex items-center gap-4 mb-4">
+
+                        <div
+                            class="w-12 h-12 rounded-2xl bg-white text-black flex items-center justify-center">
+
+                            <i class="fa-solid fa-bolt"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3 class="text-white font-semibold">
+                                Underground Culture
+                            </h3>
+
+                            <p class="text-xs text-gray-500">
+                                Black Metal / Punk / Hardcore
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Manage your merchandise collections with a modern
+                        underground dashboard experience.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </aside>
+        <!-- END SIDEBAR -->
+
+        <!-- MAIN CONTENT -->
+        <main class="flex-1 flex flex-col min-h-screen">
+
+            <!-- TOPBAR -->
+            <header
+                class="sticky top-0 z-40 bg-[#111111]/90 backdrop-blur-xl border-b border-gray-800">
+
+                <div class="flex items-center justify-between px-5 lg:px-8 py-5">
+
+                    <!-- Left -->
+                    <div>
+
+                        <h2 class="text-2xl font-bold text-white">
+                            Admin Dashboard
+                        </h2>
+
+                        <p class="text-sm text-gray-500 mt-1">
+                            Welcome back to Higgle Session.
+                        </p>
+
+                    </div>
+
+                    <!-- Right -->
+                    <div class="flex items-center gap-4">
+
+                        <!-- Search -->
+                        <div class="hidden md:flex relative">
+
+                            <input type="text"
+                                placeholder="Search..."
+                                class="bg-[#1a1a1a] border border-gray-700 rounded-2xl px-5 py-3 pl-12 text-sm text-white focus:outline-none focus:border-gray-500 w-72">
+
+                            <i
+                                class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-500"></i>
+
+                        </div>
+
+                        <!-- Profile -->
+                        <div
+                            class="w-12 h-12 rounded-2xl bg-white text-black flex items-center justify-center font-bold shadow-lg">
+
+                            A
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+            <!-- END TOPBAR -->
+
+            <!-- PAGE CONTENT -->
+            <div class="flex-1 bg-[#0a0a0a]">
 
                 <?= $this->include('layout_admin/navbar_admin'); ?>
                 <?= $this->renderSection('content'); ?>
 
             </div>
-            <!-- End of Main Content -->
+            <!-- END PAGE CONTENT -->
 
-            <!-- Footer -->
+            <!-- FOOTER -->
+            <footer
+                class="border-t border-gray-800 bg-[#111111] px-6 lg:px-8 py-5">
 
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Boots Artwork</span>
+                <div
+                    class="flex flex-col md:flex-row items-center justify-between gap-4">
+
+                    <p class="text-sm text-gray-500 text-center md:text-left">
+                        © 2026 Higgle Session Admin Panel
+                    </p>
+
+                    <div class="flex items-center gap-4 text-gray-500">
+
+                        <a href="#"
+                            class="hover:text-white transition duration-300">
+
+                            <i class="fa-brands fa-instagram"></i>
+
+                        </a>
+
+                        <a href="#"
+                            class="hover:text-white transition duration-300">
+
+                            <i class="fa-brands fa-discord"></i>
+
+                        </a>
+
+                        <a href="#"
+                            class="hover:text-white transition duration-300">
+
+                            <i class="fa-brands fa-github"></i>
+
+                        </a>
+
                     </div>
+
                 </div>
+
             </footer>
-            <!-- End of Footer -->
+            <!-- END FOOTER -->
 
-        </div>
-        <!-- End of Content Wrapper -->
+        </main>
+        <!-- END MAIN CONTENT -->
 
     </div>
-    <!-- End of Page Wrapper -->
+    <!-- END WRAPPER -->
 
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Bootstrap core JavaScript-->
-    
+    <!-- Script -->
     <script src="<?= base_url() ?>js/animation.js"></script>
-    <script src="<?= base_url() ?>vendor/jquery/jquery.min.js"></script>
-    <script src="<?= base_url() ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="<?= base_url() ?>vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="<?= base_url() ?>js/sb-admin-2.min.js"></script>
-
-    <!-- Page level plugins -->
-    
-    
-    <!-- Page level custom scripts -->
 
 </body>
 

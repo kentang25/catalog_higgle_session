@@ -18,7 +18,7 @@
 
         <!-- Image -->
         <div class="overflow-hidden">
-            <img src="img_upload/<?= $collection['thumbnail']; ?>" alt="<?= $collection['nama_band'] ?>"
+            <img src="/img_upload/<?= $collection['thumbnail']; ?>" alt="<?= $collection['nama_band'] ?>"
                 class="w-full h-80 object-cover group-hover:scale-105 transition duration-500">
         </div>
 

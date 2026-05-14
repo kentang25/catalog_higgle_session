@@ -27,7 +27,7 @@
 
                 <button type="submit" class="inline-block !bg-green-500 hover:bg-green-600 text-white px-4 py-2 mt-5 rounded-lg shadow !no-underline transition">
                     Update </button>
-                <a href="/admin/about" class="inline-block !bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 mt-5 rounded-lg shadow !no-underline transition">
+                <a href="/admin/about" class="inline-block !bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 mt-5 rounded-lg shadow !no-underline transition">Back</a>
             </form>
         </div>
     </div>

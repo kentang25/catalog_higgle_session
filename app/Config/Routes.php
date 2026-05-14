@@ -5,7 +5,15 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Home::index');
+
+
+// $routes->get('/', 'Home::index');
+
+// auth higgle
+
+$routes->get('admin/login', 'Admin_auth::index');
+
+// admin higgle
 
 $routes->get('/admin', 'Admin_higgle::index');
 $routes->post('/admin/save', 'Admin_higgle::save');
@@ -24,4 +32,5 @@ $routes->post('/admin/about/update/(:num)', 'About_higgle::update/$1');
 // Higgle Session
 
 $routes->get('/higgle-session', 'Higgle_session::index');
-$routes->get('/collection', 'Higgle_session::collection');
+$routes->get('/higgle-session/collection', 'Higgle_session::collection');
+$routes->get('/higgle-session/about', 'Higgle_session::about');
